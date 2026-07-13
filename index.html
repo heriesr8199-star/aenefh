@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Anime Nusantara Family</title>
+    <!-- Manggil CSS yang ada di dalem folder css -->
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+    <div class="login-box">
+        <h2 class="title">🍵 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐀𝐍𝐈𝐌𝐄 𝐍𝐔𝐒𝐀𝐍𝐓𝐀𝐑𝐀 𝐅𝐀𝐌𝐈𝐋𝐘 🍵</h2>
+        
+        <div class="input-group">
+            <span class="icon">👤</span>
+            <input type="text" id="namaUser" placeholder="Masukkan Nama Lu..." autocomplete="off">
+        </div>
+
+        <button onclick="prosesLogin()">M a s u k</button>
+    </div>
+
+    <script>
+        function prosesLogin() {
+            const nama = document.getElementById('namaUser').value;
+          
+            
+            if(nama.trim() === "") {
+                alert("Isi nama lu dulu woi! 🗿");
+                return;
+            }
+
+            localStorage.setItem("namaMember", nama);
+            window.location.href = "home.html"; 
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* FIX TOTAL BIAR LAYAR GAK BISA GESER */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* NGUNCI BIAR GAK BISA GESER KANAN */
+    background-color: #000;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../assets/bg.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    width: 100vw; /* Maksa lebar overlay sesuai layar */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main { 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 0 15px; /* Kasih jarak samping biar nggak nempel banget ke pinggir layar */
+    box-sizing: border-box;
+}
+
+/* KOTAK KACA */
+.glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    width: 100%; /* Pastiin gak lebih lebar dari main */
+    box-sizing: border-box;
+}
+
+#search-section {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#search-input { 
+    width: 100%; 
+    padding: 15px; 
+    border-radius: 15px; 
+    background: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    color: white; 
+    outline: none; 
+    box-sizing: border-box; /* Penting biar gak nembus layar */
+}
+
+/* Biar scrollbar gak bikin nambah lebar layar */
+#member-list { max-height: 300px; overflow-y: auto; }
+
+
+/* STATUS ONLINE HIJAU */
+.status-online { display: flex; align-items: center; font-size: 0.8rem; color: #00f260; }
+.status-dot { width: 8px; height: 8px; background: #00f260; border-radius: 50%; margin-right: 6px; box-shadow: 0 0 8px #00f260; }
+
+.resource-grid { display: flex; flex-direction: column; gap: 10px; }
+.resource-item { display: flex; align-items: center; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 12px; text-decoration: none; color: white; }
+.resource-icon { width: 40px; height: 40px; margin-right: 15px; }
+.icon-placeholder { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-right: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.resource-info h4 { margin: 0; font-size: 0.9rem; color: #00f260; }
+.resource-info p { margin: 0; font-size: 0.7rem; color: #aaa; }
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem; /* Dikecilin dikit biar gak kepotong */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    word-wrap: break-word; /* Biar kalau panjang dia pindah baris */
+    max-width: 90%; /* Biar gak mentok ke pinggir layar */
+}
+
+header p {
+    margin: 0 0 20px 0;
+    font-size: 0.9rem;
+    color: #ddd;
+    max-width: 80%; /* Biar teks di bawah gak terlalu lebar */
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00f260;
+    box-shadow: 0 0 20px rgba(0, 242, 96, 0.4);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.btn-wa {
+    display: inline-flex; /* Biar ukurannya ngikutin teks */
+    justify-content: center;
+    align-items: center;
+    background-color: #00f260;
+    color: #000;
+    padding: 12px 40px; /* Lebarin padding samping biar tombol gak kurus */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 20px;
+    white-space: nowrap; /* Biar teks gak turun ke bawah atau kepotong */
+    box-shadow: 0 4px 15px rgba(0, 242, 96, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-wa:hover {
+    transform: scale(1.05);
+}
+/* RAPIHIN LIST MEMBER: KIRI (Nama/Role), KANAN (Status) */
+ul { list-style: none; padding: 0; margin: 0; }
+
+ul li {
+    display: flex;
+    justify-content: space-between; /* Nama di kiri, Status di kanan */
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Biar Nama dan Role rapi di kiri */
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-name { font-weight: 600; font-size: 0.95rem; }
+.member-role { font-size: 0.75rem; color: #aaa; margin-top: 2px; }
+
+/* Status online tetap di kanan */
+.status-online { display: flex; align-items: center; font-size: 0.75rem; color: #00f260; }
+.status-dot { width: 8px; height: 8px; background: #00f260; border-radius: 50%; margin-right: 6px; box-shadow: 0 0 8px #00f260; }
