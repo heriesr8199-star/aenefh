@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         console.log("⏳ Sedang menarik data dari server...");
         
-        const respon = await fetch('https://back-ultraw-fall-longer.trycloudflare.com');
+        const respon = await fetch('https://containers-prostores-pit-craps.trycloudflare.com');
         
         if (!respon.ok) throw new Error("File JSON tidak ditemukan!");
         const dataServer = await respon.json();
