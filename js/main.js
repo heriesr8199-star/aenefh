@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         console.log("⏳ Sedang menarik data dari server...");
         
-        const respon = await fetch('https://escape-gordon-allows-heavy.trycloudflare.com/data_publik.json');
+        const respon = await fetch('https://back-ultraw-fall-longer.trycloudflare.com/data_publik.json');
         
         if (!respon.ok) throw new Error("File JSON tidak ditemukan!");
         const dataServer = await respon.json();
